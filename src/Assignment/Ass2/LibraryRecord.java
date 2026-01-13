@@ -7,30 +7,56 @@ public class LibraryRecord {
     private int borrowDays;
     private boolean borrowed;
 
-    // Constructor for books never borrowed
-    public LibraryRecord(String bookTitle) {
-        this.bookTitle = bookTitle;
-        this.borrowerName = null;
-        this.borrowDays = 0;
-        this.borrowed = false;
-    }
-
-    // Constructor for borrowed books
-    public LibraryRecord(String bookTitle, String borrowerName, int borrowDays) {
+    // Constructor
+    public LibraryRecord(String bookTitle, String borrowerName, int borrowDays, boolean borrowed) {
         this.bookTitle = bookTitle;
         this.borrowerName = borrowerName;
         this.borrowDays = borrowDays;
-        this.borrowed = true;
+        this.borrowed = borrowed;
+    }
+
+    // Getters
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public String getBorrowerName() {
+        return borrowerName;
+    }
+
+    public int getBorrowDays() {
+        return borrowDays;
+    }
+
+    public boolean isBorrowed() {
+        return borrowed;
+    }
+
+    // Setters
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
+    }
+
+    public void setBorrowerName(String borrowerName) {
+        this.borrowerName = borrowerName;
+    }
+
+    public void setBorrowDays(int borrowDays) {
+        this.borrowDays = borrowDays;
+    }
+
+    public void setBorrowed(boolean borrowed) {
+        this.borrowed = borrowed;
     }
 
     @Override
     public String toString() {
         String status = borrowed ? "Borrowed" : "Available";
-        String borrower = (borrowerName != null) ? borrowerName : "None";
+        String borrower = (borrowerName == null) ? "None" : borrowerName;
 
         return "Book Title: " + bookTitle +
-                "\nBorrower Name: " + borrower +
-                "\nBorrow Duration: " + borrowDays + " days" +
-                "\nStatus: " + status;
+                "\nBorrower: " + borrower +
+                "\nBorrow Days: " + borrowDays +
+                "\nStatus: " + status + "\n";
     }
 }

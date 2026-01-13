@@ -1,6 +1,6 @@
 package Assignment.Ass1;
 
-// Main Program -----------------
+// LibraryMain Program -----------------
 public class MainProgram {
 
         public static void main(String[] args) {
