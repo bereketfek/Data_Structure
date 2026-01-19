@@ -16,10 +16,10 @@ public class BrowserHistory {
      * Represents a single web page node in the history.
      */
     class WebPage {
-        String url;       // URL of the page
-        long timestamp;   // Time page was visited
-        WebPage prev;     // Previous page in history
-        WebPage next;     // Next page in history
+        String url;
+        long timestamp;
+        WebPage prev;
+        WebPage next;
 
         /**
          * Constructor: creates a new WebPage node with the current timestamp
@@ -32,9 +32,9 @@ public class BrowserHistory {
         }
     }
 
-    private WebPage head;     // Oldest page
-    private WebPage tail;     // Most recently visited page
-    private WebPage current;  // Current page being viewed
+    private WebPage head;
+    private WebPage tail;
+    private WebPage current;
 
     /**
      * Visits a new page and updates history.
@@ -151,7 +151,7 @@ public class BrowserHistory {
             int count = freq.get(url);
             long time = latestTime.get(url);
 
-            // Pick the URL with higher count or more recent timestamp if tied
+            // Pick the URL with a higher count or more recent timestamp if tied
             if (count > maxCount || (count == maxCount && time > latest)) {
                 maxCount = count;
                 latest = time;
