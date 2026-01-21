@@ -6,11 +6,11 @@ import java.util.NoSuchElementException;
 
 public class DoublyLinkedIterator<E> implements Iterable<E> {
 
-    @Override
-
     /**
      * iterator() is a method that returns an object typed as Iterator<E>
      * forward only: have hasNext() and next()*/
+
+    @Override
 
     public Iterator<E> iterator() {
         return new DLLIterator();
@@ -20,7 +20,6 @@ public class DoublyLinkedIterator<E> implements Iterable<E> {
      * it is bidrectional due to having extra methods
      * both methods return same objects coz DLLIterator implements both interfaces
      * purpose of two methods: enhabced loop does not work without an Iterator interface
-
      */
 
     public ListIterator<E> listIterator() {
@@ -28,8 +27,10 @@ public class DoublyLinkedIterator<E> implements Iterable<E> {
 
     private class DLLIterator implements ListIterator<E> {
 
+        //in the beginning hasNext conceptually before the head
+
         private Node next = head;
-        private Node lastReturned = null;
+        private Node lastReturned = null;// node returned recently by next() or previous()
         private int nextIndex = 0;
 
         @Override
