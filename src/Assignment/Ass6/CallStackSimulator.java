@@ -6,7 +6,7 @@ public class CallStackSimulator {
 
     public static void main(String[] args) {
         /**
-         * Array → for splitting input (String[] parts)
+         * Lesson2.Array → for splitting input (String[] parts)
          * ArrayList → for storing the call stack (ArrayList<String> stack)
          */
         Scanner sc = new Scanner(System.in);
