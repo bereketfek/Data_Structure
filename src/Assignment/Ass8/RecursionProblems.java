@@ -22,21 +22,14 @@ public class RecursionProblems {
     }
 
     // 4. Decimal to Binary
-    public static void decimalToBinary(int num) {
-        if (num == 0) {
-            System.out.print(0);
-            return;
-        }
-        decimalToBinaryHelper(num);
-    }
 
-    private static void decimalToBinaryHelper(int num) {
+    private static void  decimalToBinary(int num) {
         if (num == 0) return;
-        decimalToBinaryHelper(num / 2);
+        decimalToBinary(num / 2);
         System.out.print(num % 2);
     }
 
-    // 5. Count vowels in string
+    // 5. Count vowels in a string
     public static int countVowels(String s) {
         if (s.length() == 0) return 0;
         return ("aeiouAEIOU".indexOf(s.charAt(0)) != -1 ? 1 : 0)
@@ -53,13 +46,13 @@ public class RecursionProblems {
         return arr[index] + sumHelper(arr, index + 1);
     }
 
-    // 7. Maximum number in array
+    // 7. Maximum number in an array
     public static int max(int[] arr) {
         return maxHelper(arr, 0);
     }
 
     private static int maxHelper(int[] arr, int index) {
-        if (index == arr.length) return Integer.MIN_VALUE;
+        if (index == arr.length) return Integer.MIN_VALUE;//-2,147,483,648 smallest int number
         return Math.max(arr[index], maxHelper(arr, index + 1));
     }
 
@@ -77,9 +70,6 @@ public class RecursionProblems {
         System.out.println("Sum of digits of 12345:");
         System.out.println(RecursionProblems.sumDigits(12345));
 
-        System.out.println("Decimal 15 to Binary:");
-        RecursionProblems.decimalToBinary(15);
-        System.out.println();
 
         System.out.println("Count vowels in 'JavaProgramming':");
         System.out.println(RecursionProblems.countVowels("JavaProgramming"));
@@ -91,5 +81,8 @@ public class RecursionProblems {
 
         System.out.println("Maximum number in array:");
         System.out.println(max(arr));
+
+        System.out.println("decimal number 20 in to binary:");
+        decimalToBinary(20);
     }
 }
